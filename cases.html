@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cases de Sucesso - AWC Engenharia</title>
+  <meta name="description" content="Conheça os cases de sucesso da AWC Engenharia em projetos e execuções de engenharia elétrica e multidisciplinar nos segmentos industrial, predial e de mineração.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Definição de variáveis de cor para consistência */
+    :root {
+      --cor-principal: #FFE600;
+      --cor-secundaria: #1a1a1a;
+      --cor-texto: #2a2a2a;
+      --cor-fundo: #fff;
+      --cor-destaque: #f4f4f4;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+    }
+
+    header {
+      background-color: var(--cor-principal);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--cor-secundaria);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: #000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--cor-secundaria);
+      font-size: 2.5em;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout de grid para os cases */
+      gap: 30px;
+    }
+
+    .case-item {
+      background-color: var(--cor-destaque);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: flex; /* Para alinhar conteúdo dentro do card */
+      flex-direction: column;
+      justify-content: space-between; /* Empurra o botão para baixo */
+    }
+
+    .case-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    }
+
+    .case-item img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+      max-height: 200px; /* Limita a altura das imagens para consistência */
+    }
+
+    .case-item h3 {
+      color: var(--cor-secundaria);
+      margin-bottom: 10px;
+      font-size: 1.4em;
+    }
+
+    .case-item p {
+      font-size: 1em;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      flex-grow: 1; /* Permite que o parágrafo ocupe o espaço restante */
+    }
+
+    .case-item .btn-saiba-mais {
+      align-self: flex-start; /* Alinha o botão à esquerda dentro do card */
+      margin-top: auto; /* Empurra o botão para a parte inferior do card */
+    }
+
+    .btn-saiba-mais { /* Estilos reutilizados do CSS principal */
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: var(--cor-principal);
+      color: var(--cor-secundaria);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .btn-saiba-mais:hover {
+      background-color: #ffda00;
+    }
+
+    .cta { /* Reutiliza o estilo da página de serviços para a CTA final */
+      text-align: center;
+      margin-top: 60px;
+      padding: 40px;
+      background-color: var(--cor-destaque);
+      border-radius: 8px;
+    }
+
+    .cta h2 {
+      color: var(--cor-secundaria);
+      margin-bottom: 25px;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: var(--cor-principal);
+      color: var(--cor-secundaria);
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .cta a:hover {
+      background-color: #ffda00;
+    }
+
+    footer {
+      background-color: var(--cor-principal);
+      color: var(--cor-secundaria);
+      padding: 30px 10px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    footer .social {
+      margin-top: 15px;
+    }
+
+    footer .social a {
+      color: var(--cor-secundaria);
+      margin: 0 10px;
+      font-size: 1.5em;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer .social a:hover {
+      color: #000;
+    }
+
+    /* Media queries para responsividade */
+    @media (max-width: 768px) {
+      header, nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+
+      .cases-grid {
+        grid-template-columns: 1fr; /* Coluna única em telas menores */
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 10px 15px;
+      }
+      .container {
+        padding: 20px 15px;
+      }
+      .case-item {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="AWC-engenharia.png" alt="Logo AWC Engenharia">
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="cases.html" class="active">Cases de Sucesso</a> <a href="contato.html">Contato</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1>Nossos Cases de Sucesso</h1>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto;">Explore alguns dos projetos desafiadores que realizamos e os resultados excepcionais que entregamos aos nossos clientes em diversas áreas da engenharia.</p>
+
+    <div class="cases-grid">
+
+      <div class="case-item">
+        <img src="case-predial.jpg" alt="Projeto Elétrico Predial">
+        <h3>Projeto Elétrico de Alto Padrão - Edifício Visionaire</h3>
+        <p>Desenvolvimento e execução completa do projeto elétrico para um condomínio residencial de luxo com 20 andares. Desafio: integrar sistemas de automação predial avançados e garantir alta eficiência energética. Solução AWC: Projeto otimizado com subestações compactas e sistema de iluminação inteligente, resultando em 25% de economia de energia para os moradores.</p>
+        <a href="case-edificio-visionaire.html" class="btn-saiba-mais">Ver Detalhes</a>
+      </div>
+
+      <div class="case-item">
+        <img src="case-industrial.jpg" alt="Automação Industrial">
+        <h3>Automação de Linha de Produção - Indústria Alpha</h3>
+        <p>Modernização e automação completa de uma linha de produção em uma fábrica de alimentos. Desafio: Reduzir tempo de inatividade e aumentar a produtividade em 30%. Solução AWC: Implementação de CLPs de última geração, sensores e software SCADA personalizado, otimizando o fluxo de trabalho e minimizando falhas, superando a meta de produtividade.</p>
+        <a href="case-industria-alpha.html" class="btn-saiba-mais">Ver Detalhes</a>
+      </div>
+
+      <div class="case-item">
+        <img src="case-mineracao.jpg" alt="Infraestrutura Elétrica Mineração">
+        <h3>Infraestrutura Elétrica para Mineradora Beta</h3>
+        <p>Instalação e comissionamento de toda a infraestrutura elétrica para uma nova planta de mineração. Desafio: Atender às rigorosas normas de segurança e operar em ambiente hostil. Solução AWC: Uso de equipamentos robustos, sistemas de proteção avançados e treinamento de equipe local, garantindo operação segura e contínua com 0 acidentes registrados.</p>
+        <a href="case-mineradora-beta.html" class="btn-saiba-mais">Ver Detalhes</a>
+      </div>
+
+      <div class="case-item">
+        <img src="case-solar.jpg" alt="Instalação de Painéis Solares">
+        <h3>Implementação de Usina Solar - Fazenda Modelo</h3>
+        <p>Projeto e instalação de um sistema fotovoltaico para uma grande propriedade rural, visando autonomia energética. Desafio: Maximizar a geração de energia em área de difícil acesso. Solução AWC: Instalação de 500 painéis solares com sistema de rastreamento solar, reduzindo em 90% a conta de energia da fazenda e gerando excedente para venda.</p>
+        <a href="case-fazenda-modelo.html" class="btn-saiba-mais">Ver Detalhes</a>
+      </div>
+
+    </div>
+
+    <div class="cta">
+      <h2>Transforme seu Projeto em um Novo Case de Sucesso!</h2>
+      <a href="contato.html">Entre em contato</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AWC Engenharia - Todos os direitos reservados</p>
+    <p>Montagem | Manutenção | Projetos | Instalações Elétricas</p>
+    <div class="social">
+      <a href="https://www.instagram.com/awcengenharia" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/awcengenharia" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>

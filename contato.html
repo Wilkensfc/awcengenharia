@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato - AWC Engenharia</title> <meta name="description" content="Entre em contato com a AWC Engenharia para orçamentos, dúvidas, suporte ou parcerias. Atendimento em todo o Brasil."> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Definição de variáveis de cor para consistência */
+    :root {
+      --cor-principal: #FFE600;
+      --cor-secundaria: #1a1a1a;
+      --cor-texto: #2a2a2a;
+      --cor-fundo: #fff;
+      --cor-destaque: #f4f4f4;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+    }
+
+    header {
+      background-color: var(--cor-principal);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: var(--cor-secundaria);
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover,
+    nav a.active { /* Estilo para o link ativo na navegação */
+      color: #000;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--cor-secundaria);
+      font-size: 2.5em;
+    }
+
+    /* Removidos estilos de .grid-servicos e .servico, pois não se aplicam a esta página */
+
+    /* Estilos para a seção de contato */
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+
+    .contact-item {
+      background-color: var(--cor-destaque);
+      padding: 25px;
+      border-radius: 8px;
+      flex: 1 1 280px; /* Adaptação para 2 ou 3 colunas */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .contact-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .contact-item i {
+      font-size: 2em;
+      color: var(--cor-principal);
+      margin-bottom: 10px;
+      display: block; /* Para que o ícone fique em sua própria linha */
+    }
+
+    .contact-item h3 {
+      color: var(--cor-secundaria);
+      margin-bottom: 10px;
+    }
+
+    .contact-item p {
+      font-size: 1em;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      max-width: 700px; /* Aumentado um pouco para o formulário */
+      margin: 30px auto 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      background-color: var(--cor-destaque); /* Fundo para o formulário */
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-family: 'Segoe UI', sans-serif;
+      font-size: 1em;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: var(--cor-principal);
+      box-shadow: 0 0 0 2px rgba(255, 230, 0, 0.3);
+    }
+
+    .contact-form button {
+      cursor: pointer;
+      border: none;
+      padding: 12px 25px;
+      background-color: var(--cor-principal);
+      color: var(--cor-secundaria);
+      font-weight: bold;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #ffda00;
+    }
+
+    .google-map {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .google-map iframe {
+      width: 100%;
+      max-width: 800px; /* Limita a largura do mapa */
+      height: 400px;
+      border: 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    footer {
+      background-color: var(--cor-principal);
+      color: var(--cor-secundaria);
+      padding: 30px 10px;
+      text-align: center;
+      margin-top: 60px; /* Espaço entre o conteúdo e o rodapé */
+    }
+
+    footer .social {
+      margin-top: 15px;
+    }
+
+    footer .social a {
+      color: var(--cor-secundaria);
+      margin: 0 10px;
+      font-size: 1.5em;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer .social a:hover {
+      color: #000;
+    }
+
+    /* Media queries para responsividade */
+    @media (max-width: 768px) {
+      header, nav {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      nav a {
+        margin: 10px;
+      }
+
+      h1 {
+        font-size: 2em;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-item {
+        flex: 1 1 90%; /* Ocupa quase toda a largura em telas menores */
+      }
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 10px 15px;
+      }
+      .container {
+        padding: 20px 15px;
+      }
+      .contact-form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="AWC-engenharia.png" alt="Logo AWC Engenharia">
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="servicos.html">Serviços</a>
+      <a href="cases.html">Cases de Sucesso</a>
+      <a href="contato.html" class="active">Contato</a> </nav>
+  </header>
+
+  <main class="container">
+    <h1>Fale Conosco</h1>
+<p>Entre em contato conosco para orçamentos, dúvidas ou parcerias. Estamos prontos para te atender com agilidade e profissionalismo.</p>
+      
+    <div class="contact-info">
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>Para dúvidas e orçamentos:</p>
+        <p><a href="mailto:contato@awcengenharia.com.br">contato@awcengenharia.com.br</a></p>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <h3>Telefone / WhatsApp</h3>
+        <p>Atendimento de segunda a sexta, das 9h às 18h:</p>
+        <p><a href="tel:+5531999999999">(31) 99999-9999</a></p>
+        <p><a href="https://wa.me/5531999999999" target="_blank">Enviar WhatsApp <i class="fab fa-whatsapp"></i></a></p>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Endereço</h3>
+        <p>Rua Exemplo, 123 - Centro</p>
+        <p>Betim, Minas Gerais - CEP: 32600-000</p>
+        <p>Brasil</p>
+      </div>
+    </div>
+
+    
+
+    <div class="section" id="contato">
+      
+      
+      <form class="contact-form">
+        <h3>Entre em contato:</h3>
+        <input type="text" placeholder="Seu Nome" required>
+        <input type="email" placeholder="Seu Email" required>
+        <input type="text" placeholder="Assunto">
+        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+        <button type="submit" class="btn-saiba-mais">Enviar Mensagem</button>
+      </form>
+    </div>
+
+    <div class="google-map">
+      <h2>Onde Estamos</h2>
+      <p>Visite-nos em nosso escritório ou encontre-nos no mapa.</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3747.018501234567!2d-44.2001234!3d-19.9678901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa697a22b270a2a%3A0x123456789abcdef!2sBetim%2C%20MG!5e0!3m2!1spt-BR!2sbr!4v1678901234567!5m2!1spt-BR!2sbr"
+        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 AWC Engenharia - Todos os direitos reservados</p>
+    <p>Montagem | Manutenção | Projetos | Instalações Elétricas</p>
+    <div class="social">
+      <a href="https://www.instagram.com/awcengenharia" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.linkedin.com/company/awcengenharia" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </footer>
+
+</body>
+</html>
